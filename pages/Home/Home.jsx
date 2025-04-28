@@ -8,6 +8,7 @@ import Card from '../../components/Card/Card';
 function Home(){
     // variable que va a almacenar los items en favoritos
     // const itemsFavoritos = {};
+    const favItems = JSON.parse(localStorage.getItem("favoritos")) || {};
     
 
     /* función para agregar los elementos a favoritos */
@@ -25,7 +26,6 @@ function Home(){
     const [apod, setApod] = useState([]);
     useEffect(() => {
 
-        const favItems = JSON.parse(localStorage.getItem("favoritos")) || {};
 
         const fetchApod = async () => {
             try {
