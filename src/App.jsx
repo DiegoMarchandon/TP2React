@@ -23,10 +23,10 @@ function App() {
     <Router>
       <div className="App">
         {/* Botones para cambiar el idioma */}
-        <div style={{ padding: '10px', textAlign: 'center' }}>
+        {/* <div style={{ padding: '10px', textAlign: 'center' }}>
           <button onClick={() => changeLanguage('es')}>{t('language')} Español</button>
           <button onClick={() => changeLanguage('en')}>{t('language')} English</button>
-        </div>
+        </div> */}
         {/* Contenido de la aplicación */}
         <Routes>
           {/* en Element y entre llaves van los components de cada pagina que creemos. Ej {<Home/>} o {<Contacto/>} */}
@@ -34,7 +34,7 @@ function App() {
           <Route path={ROUTES.favoritos} element={<Favoritos/>} />
           <Route path={ROUTES.detalles} element={<Detalles/>} />
           <Route path={ROUTES.notfound} element={<NotFound/>} />
-          <Route path="/contact" element={<h1>Contact</h1>} />
+          {/* <Route path="/contact" element={<h1>Contact</h1>} /> */}
         </Routes>
       </div>
     </Router>
