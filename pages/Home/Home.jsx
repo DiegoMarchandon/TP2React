@@ -21,8 +21,8 @@ function Home(){
     const onClickNavigateToFavoritosHandler = () =>{
         navigate(ROUTES.favoritos)
     }
+    
     const [apod, setApod] = useState([]);
-
     useEffect(() => {
 
         const favItems = JSON.parse(localStorage.getItem("favoritos")) || {};
@@ -42,6 +42,7 @@ function Home(){
     
         fetchApod(); 
     }, []);
+
 
 
     return (

@@ -15,7 +15,6 @@ function Header() {
                 <img className="w-30 cursor-pointer transition duration-300 hover:brightness-125 hover:contrast-150 hover:drop-shadow-lg" src="/logo/logo.png" alt="Logo" onClick={onClickNavigateToHomeHandler}/>
                 <ul className="flex space-x-6 text-xl" >
                     <li className="cursor-pointer hover:text-gray-300" onClick={onClickNavigateToFavoritoHandler}>Favoritos</li>
-                    <li className="cursor-pointer hover:text-gray-300">Otra página??</li>
                 </ul>
             </div>
         </header>
