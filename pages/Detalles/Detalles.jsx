@@ -36,7 +36,7 @@ function Detalles() {
     }
 
     return (
-        <div class='min-h-screen flex flex-col'>
+        <div className='min-h-screen flex flex-col'>
             <Header />
             <div className="container mx-auto px-4 py-8">
                 <div className="flex flex-col items-center gap-6">

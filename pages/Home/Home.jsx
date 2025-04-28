@@ -12,8 +12,8 @@ function Home(){
         <div className="min-h-screen flex flex-col">
             <Header />
             {/* Boludeando con el boton */}
-            <button class=" border cursor-pointer"  onClick={onClickNavigateToFavoritosHandler}> ir a Favoritos</button>
-                <h1  class=" text-xl text-center">Contenido del Homee</h1>
+            <button className=" border cursor-pointer"  onClick={onClickNavigateToFavoritosHandler}> ir a Favoritos</button>
+                <h1  className=" text-xl text-center">Contenido del Homee</h1>
             <Footer/>
         </div>
     );
