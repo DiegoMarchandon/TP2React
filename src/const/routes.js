@@ -1,4 +1,6 @@
 export const ROUTES = {
     home: '/Home',
-    favoritos: '/Favoritos'
+    favoritos: '/Favoritos',
+    detalles: '/Detalles/:date',
+    notfound: '/Notfound'
 }
