@@ -3,7 +3,7 @@ function Footer() {
     return (
         // <div className="flex flex-col justify-between min-h-screen">
         //     <div className="flex-grow">
-        <footer className="bg-gray-900 text-gray-300 py-8 fixed bottom-0 w-full">
+        <footer className="bg-gray-900 text-gray-300 py-8  w-full ">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
                     <div className="text-center md:text-left">
