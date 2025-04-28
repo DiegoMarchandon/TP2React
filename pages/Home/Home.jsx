@@ -10,8 +10,8 @@ function Home(){
     const onClickNavigateToFavoritosHandler = () =>{
         navigate(ROUTES.favoritos)
     }
+    
     const [apod, setApod] = useState([]);
-
     useEffect(() => {
         const fetchApod = async () => {
             try {
@@ -28,6 +28,7 @@ function Home(){
     
         fetchApod(); 
     }, []);
+
     return (
         <div className="min-h-screen flex flex-col bg-[#dfe1e1ff]">
             <Header />

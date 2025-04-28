@@ -7,6 +7,10 @@ const Card = ({ imageUrl, title, date, onClick }) => {
         <div class="w-full p-4">
             <h3 class="text-white text-center  text-lg ">{title}</h3>
             <p class="text-white text-lg text-center">{date}</p>
+            <a href={`/Detalles/${date}`}>
+                <button className="cursor-pointer border">Ver detalles</button>
+            </a>
+            <button className="border">Favoritos</button>
         </div>
     </div>
     );
