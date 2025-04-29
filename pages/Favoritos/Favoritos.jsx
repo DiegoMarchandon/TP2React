@@ -11,7 +11,7 @@ function Favoritos(){
         navigate(ROUTES.home)
     }
 
-    const favs = JSON.parse(localStorage.getItem("favoritos")) || {};
+    const favs = JSON.parse(localStorage.getItem("favoritos")) || [];
 
     return (
         <div>
@@ -23,7 +23,7 @@ function Favoritos(){
                 imageUrl={item.url || item.hdurl} 
                 title={item.title}
                 date={item.date}
-                onClick={() => handleCardClick(item)} //de ejemplo
+                itemRef={item}
             />
             ))}
             {/* Boludeando con el boton */}

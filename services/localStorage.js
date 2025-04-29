@@ -2,7 +2,7 @@ const lenguaje = {
     lenguajePref: "es"
 };
 
-const favoritos = {
+const favoritos = [
     // formato de ejemplo: 
     /* [
         fechaID: " ", //usamos la fecha como ID porque es la foto DEL dia, y no se repite
@@ -12,7 +12,7 @@ const favoritos = {
     ],
     [...]
     */
-};
+];
 
 localStorage.setItem("language",JSON.stringify(lenguaje));
 localStorage.setItem("favoritos",JSON.stringify(favoritos));

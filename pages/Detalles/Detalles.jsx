@@ -9,7 +9,7 @@ import Footer from '../../components/Footer/Footer';
 
 function Detalles() {
     const { date } = useParams(); // Extrae la fecha de la URL
-    const favItems = JSON.parse(localStorage.getItem("favoritos")) || {};
+    const favItems = JSON.parse(localStorage.getItem("favoritos")) || [];
 
     function handleCardClick() {
         favItems[Object.keys(favItems).length] = detail;

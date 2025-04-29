@@ -8,7 +8,7 @@ import Card from '../../components/Card/Card';
 function Home(){
     // variable que va a almacenar los items en favoritos
     // const itemsFavoritos = {};
-    const favItems = JSON.parse(localStorage.getItem("favoritos")) || {};
+    const favItems = JSON.parse(localStorage.getItem("favoritos")) || [];
     
     const navigate = useNavigate();
     const onClickNavigateToFavoritosHandler = () =>{
@@ -47,7 +47,6 @@ function Home(){
                     imageUrl={item.url || item.hdurl} 
                     title={item.title}
                     date={item.date}
-                    arregloJSON={favItems}
                     itemRef = {item} //de ejemplo
                 />
             ))}
