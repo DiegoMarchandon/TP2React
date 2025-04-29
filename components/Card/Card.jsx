@@ -4,19 +4,20 @@ const Card = ({ imageUrl, title, date, itemRef }) => {
     let arregloJSON = JSON.parse(localStorage.getItem("favoritos")) || [];
 
     /* función para agregar/eliminar los elementos a favoritos */
-    function handleCardClick(itemKey){
+    function handleCardClick(){
         // Obtener datos actuales de favoritos desde localStorage
-        console.log("tipo item:",typeof(itemRef)," item: ",itemRef, "arregloJSON: ",arregloJSON);
+        // console.log("tipo item:",typeof(itemRef)," item: ",itemRef, "arregloJSON: ",arregloJSON);
+        console.log("item key: ",date, "arregloJSON: ",arregloJSON);
             // si el elemento ya existe (coinciden las keys)
-            const indexFound = Object.values(arregloJSON).findIndex(dato => dato.date === itemKey);
+            const indexFound = arregloJSON.findIndex(elem => elem.date === date);
             if(indexFound !== -1){
                 // si ya existe, lo elimino del arreglo
-                // arregloJSON.splice(indexFound,1);
-                delete arregloJSON[indexFound];
+                arregloJSON.splice(indexFound,1);
+                console.log("ya existe. Eliminado. Nuevo arreglo: ",arregloJSON);
             }else{
                 // si no existe, lo agrego al arreglo
-                arregloJSON[Object.keys(arregloJSON).length] = itemRef;
-                // arregloJSON.push(itemRef);
+                arregloJSON.push(itemRef);
+                console.log("no existe. Agregado. Nuevo arreglo: ",arregloJSON);
             }
             // reseteo el arreglo de localStorage
             localStorage.setItem("favoritos",JSON.stringify(arregloJSON));
