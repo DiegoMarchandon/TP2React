@@ -2,15 +2,21 @@ import { useNavigate } from 'react-router-dom'
 import { ROUTES } from '../../src/const/routes';
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
+import { HeartPlus, SquareChevronRight } from 'lucide-react';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 
 function Detalles() {
     const { date } = useParams(); // Extrae la fecha de la URL
+    const favItems = JSON.parse(localStorage.getItem("favoritos")) || {};
 
-    console.log(date);
-    const navigate = useNavigate();  
+    function handleCardClick() {
+        favItems[Object.keys(favItems).length] = detail;
+        localStorage.setItem("favoritos", JSON.stringify(favItems));
+    }
+
+    const navigate = useNavigate();
     const [detail, setDetail] = useState();
     const getDetail = async () => {
         try {
@@ -40,17 +46,29 @@ function Detalles() {
             <Header />
             <div className="container mx-auto px-4 py-8">
                 <div className="flex flex-col items-center gap-6">
-                    <img
-                        src={detail.hdurl}
-                        alt={detail.title}
-                        className="w-[90%] max-w-4xl object-cover rounded-lg shadow-lg sm:w-3/4"
-                    />
+                    <div className="relative w-[90%] max-w-4xl sm:w-3/4">
+                        <button
+                            onClick={handleCardClick}
+                            className="cursor-pointer absolute top-2 right-2 text-blue-500 hover:text-red-500 transition-colors duration-300 z-10"
+                        >
+                            <HeartPlus size={35} strokeWidth={2} />
+                        </button>
+                        <img
+                            src={detail.hdurl}
+                            alt={detail.title}
+                            className="w-full object-cover rounded-lg shadow-lg"
+                        />
+                    </div>
                     <h1 className="text-3xl font-bold text-gray-800 text-center sm:text-4xl">
                         {detail.title}
                     </h1>
-                    <p className="text-gray-600 text-lg leading-relaxed max-w-3xl text-center">
-                        {detail.explanation}
-                    </p>
+                    <div className="text-gray-600 text-lg leading-relaxed max-w-3xl text-center">
+                        {detail.explanation.split('\n').map((paragraph, index) => (
+                            <p key={index} className="mb-4">
+                                {paragraph}
+                            </p>
+                        ))}
+                    </div>
                 </div>
             </div>
             <Footer />
