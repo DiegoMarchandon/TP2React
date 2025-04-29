@@ -42,7 +42,7 @@ function Detalles() {
     }
 
     return (
-        <div className='min-h-screen flex flex-col'>
+        <div className='min-h-screen flex flex-col bg-radial-[at_50%_75%] from-sky-200 via-blue-300 to-indigo-900 to-90%'>
             <Header />
             <div className="container mx-auto px-4 py-8">
                 <div className="flex flex-col items-center gap-6">
