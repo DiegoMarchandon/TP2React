@@ -31,3 +31,11 @@ i18n
   });
 
 export default i18n;
+
+/* 
+/SAC
+  /locales
+    /es /translation.json --> {save: 'guardar}
+    /en /translation.json --> {save: 'save}
+
+*/

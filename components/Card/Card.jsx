@@ -1,9 +1,18 @@
 import { HeartPlus, SquareChevronRight } from 'lucide-react';
 
-const Card = ({ imageUrl, title, date, onClick }) => {
+const Card = ({ imageUrl, title, date, arregloJSON, itemRef }) => {
+
+    /* función para agregar/eliminar los elementos a favoritos */
+    function handleCardClick(){
+        console.log("tipo item:",typeof(itemRef)," item: ",itemRef);
+        arregloJSON[Object.keys(arregloJSON).length] = itemRef;
+        // reseteo el arreglo de localStorage
+        localStorage.setItem("favoritos",JSON.stringify(arregloJSON));
+    }
+
     return (
     <div className="relative w-[300px] min-h-[120px] bg-[#1b263bff] rounded-lg p-0 mb-2 flex flex-col justify-between items-start shadow-md transition-all duration-300 ease-in-out transform translate-y-0 hover:translate-y-[-4px] hover:shadow-lg cursor-pointer overflow-hidden">
-        <button onClick={onClick} className="absolute left-63 top-2 text-blue-500 hover:text-red-500 transition-colors duration-300"><HeartPlus size={35} strokeWidth={2} /></button>
+        <button onClick={handleCardClick} className="absolute left-63 top-2 text-blue-500 hover:text-red-500 transition-colors duration-300"><HeartPlus size={35} strokeWidth={2} /></button>
         <img src={imageUrl} alt={title} className="w-full h-45 object-cover "/>
         <div className="w-full p-4">
             <h3 className="text-white text-center  text-lg ">{title}</h3>

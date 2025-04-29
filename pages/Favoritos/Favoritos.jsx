@@ -10,27 +10,27 @@ function Favoritos(){
     const onClickNavigateToHomeHandler = () =>{
         navigate(ROUTES.home)
     }
-    
-    // const favs = JSON.parse(localStorage.getItem("favoritos")) || {};
 
-/*     const favs = localStorage.getItem("favoritos");
-    const [elem,setElem] = useState({});
-    useEffect(() => {
-        if(favs === null){
-            // favs = elem;
-            localStorage.setItem("favoritos",elem);
-        }else{ //distinto de null
+    const favs = JSON.parse(localStorage.getItem("favoritos")) || {};
 
-        }
-    },[]); */
-    // var resultado = Object.values(favs).length === 0 ? "ta vacio" : "hay elementos"; 
     return (
-        <div className='min-h-screen flex flex-col'>
-            <Header/>
+        <div>
+            <Header />
+        <div className='flex-grow flex flex-wrap gap-4 p-4 justify-center'>
+            {Object.values(favs).map((item) =>(
+                <Card
+                key={item.date}  
+                imageUrl={item.url || item.hdurl} 
+                title={item.title}
+                date={item.date}
+                onClick={() => handleCardClick(item)} //de ejemplo
+            />
+            ))}
             {/* Boludeando con el boton */}
-            <button className=" border  cursor-pointer " onClick={onClickNavigateToHomeHandler}>Ir a Home</button>
+            {/* <button className=" border cursor-pointer" onClick={onClickNavigateToHomeHandler}>Ir a Home</button> */}
             {/* {console.log("favoritos: ",favs)}; */}
             <Footer/>
+        </div>
         </div>
     );
 }

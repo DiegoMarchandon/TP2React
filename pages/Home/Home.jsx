@@ -10,14 +10,6 @@ function Home(){
     // const itemsFavoritos = {};
     const favItems = JSON.parse(localStorage.getItem("favoritos")) || {};
     
-
-    /* función para agregar los elementos a favoritos */
-    function handleCardClick(item){
-        console.log("tipo item:",typeof(item)," item: ",item);
-        favItems[Object.keys(favItems).length] = item;
-        // reseteo el arreglo de localStorage
-        localStorage.setItem("favoritos",JSON.stringify(favItems));
-    }
     const navigate = useNavigate();
     const onClickNavigateToFavoritosHandler = () =>{
         navigate(ROUTES.favoritos)
@@ -55,13 +47,13 @@ function Home(){
                     imageUrl={item.url || item.hdurl} 
                     title={item.title}
                     date={item.date}
-                    onClick={() => handleCardClick(item)} //de ejemplo
+                    arregloJSON={favItems}
+                    itemRef = {item} //de ejemplo
                 />
             ))}
             </div>
             {/* Boludeando con el boton */}
-            <button className=" border cursor-pointer"  onClick={onClickNavigateToFavoritosHandler}> ir a Favoritos</button>
-                <h1  className=" text-xl text-center">Contenido del Homee</h1>
+            {/* <button className=" border cursor-pointer"  onClick={onClickNavigateToFavoritosHandler}> ir a Favoritos</button> */}
             <Footer/>
         </div>
     );
