@@ -36,9 +36,8 @@ function Home(){
     }, []);
 
 
-
     return (
-        <div className="min-h-screen flex flex-col bg-[#dfe1e1ff]">
+        <div className="min-h-screen flex flex-col bg-radial-[at_50%_75%] from-sky-200 via-blue-300 to-indigo-900 to-90%">
             <Header />
             <div className="flex-grow flex flex-wrap gap-4 p-4 justify-center">
             {apod.map((item) => (
