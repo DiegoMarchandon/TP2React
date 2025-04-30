@@ -1,32 +1,15 @@
 import { HeartPlus, SquareChevronRight } from 'lucide-react';
+import { useFavoritos } from '../../src/context/favsContext';
 
 const Card = ({ imageUrl, title, date, itemRef }) => {
-    let arregloJSON = JSON.parse(localStorage.getItem("favoritos")) || [];
 
-    /* función para agregar/eliminar los elementos a favoritos */
-    function handleCardClick(){
-        // Obtener datos actuales de favoritos desde localStorage
-        // console.log("tipo item:",typeof(itemRef)," item: ",itemRef, "arregloJSON: ",arregloJSON);
-        console.log("item key: ",date, "arregloJSON: ",arregloJSON);
-            // si el elemento ya existe (coinciden las keys)
-            const indexFound = arregloJSON.findIndex(elem => elem.date === date);
-            if(indexFound !== -1){
-                // si ya existe, lo elimino del arreglo
-                arregloJSON.splice(indexFound,1);
-                console.log("ya existe. Eliminado. Nuevo arreglo: ",arregloJSON);
-            }else{
-                // si no existe, lo agrego al arreglo
-                arregloJSON.push(itemRef);
-                console.log("no existe. Agregado. Nuevo arreglo: ",arregloJSON);
-            }
-            // reseteo el arreglo de localStorage
-            localStorage.setItem("favoritos",JSON.stringify(arregloJSON));
-    }
-    const estaEnFavoritos = arregloJSON.some(dato => dato.date === date);
+    const { favoritos, toggleFavorito } = useFavoritos();
+
+    const estaEnFavoritos = favoritos.some(dato => dato.date === date);
 
     return (
     <div className="relative w-[300px] min-h-[120px] bg-[#1b263bff] rounded-lg p-0 mb-2 flex flex-col justify-between items-start shadow-md transition-all duration-300 ease-in-out transform translate-y-0 hover:translate-y-[-4px] hover:shadow-lg cursor-pointer overflow-hidden">
-        <button onClick={handleCardClick} className={`absolute left-63 top-2 ${estaEnFavoritos ? 'text-green-500' : 'text-blue-500'} hover:text-red-500 transition-colors duration-300`}><HeartPlus size={35} strokeWidth={2} /></button>
+        <button onClick={() => toggleFavorito(itemRef)} className={`absolute left-63 top-2 ${estaEnFavoritos ? 'text-green-500' : 'text-blue-500'} hover:text-red-500 transition-colors duration-300`}><HeartPlus size={35} strokeWidth={2} /></button>
         <img src={imageUrl} alt={title} className="w-full h-45 object-cover "/>
         <div className="w-full p-4">
             <h3 className="text-white text-center  text-lg ">{title}</h3>

@@ -3,11 +3,11 @@ import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home/Home';
 import Favoritos from '../pages/Favoritos/Favoritos';
 import Detalles from '../pages/Detalles/Detalles';
-
 import { ROUTES } from './const/routes';
 import { useTranslation } from 'react-i18next';
 import './i18n'; 
 import NotFound from '../pages/NotFound/NotFound';
+import { FavoritosProvider } from './context/favsContext';
 
 function App() {
 
@@ -21,6 +21,7 @@ function App() {
 
   return (
     <Router>
+      <FavoritosProvider>
       <div className="App">
         {/* Botones para cambiar el idioma */}
         {/* <div style={{ padding: '10px', textAlign: 'center' }}>
@@ -37,6 +38,7 @@ function App() {
           {/* <Route path="/contact" element={<h1>Contact</h1>} /> */}
         </Routes>
       </div>
+      </FavoritosProvider>
     </Router>
   )
 }

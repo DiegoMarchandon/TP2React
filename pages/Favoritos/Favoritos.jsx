@@ -3,7 +3,7 @@ import { ROUTES } from '../../src/const/routes';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Card from '../../components/Card/Card';
-import { useEffect,useState } from 'react';
+import { useFavoritos } from '../../src/context/favsContext';
 
 function Favoritos(){
     const navigate = useNavigate();
@@ -11,7 +11,7 @@ function Favoritos(){
         navigate(ROUTES.home)
     }
 
-    const favs = JSON.parse(localStorage.getItem("favoritos")) || [];
+    const { favoritos: favs } = useFavoritos();
 
     return (
         <div className='bg-radial-[at_50%_75%] from-sky-200 via-blue-300 to-indigo-900 to-90%'>
