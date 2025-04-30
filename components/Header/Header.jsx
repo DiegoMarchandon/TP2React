@@ -13,11 +13,9 @@ function Header() {
 
     const [contador, setContador] = useState(0);
     useEffect(() => {
-        const favoritos = JSON.parse(localStorage.getItem("favoritos")) || {};
-        const favoritosArray = Object.values(favoritos);
-        setContador(favoritosArray.length);
+        const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+        setContador(favoritos.length);
         // console.log(favoritos.length)           // PROBAnDOO
-        console.log(favoritosArray.length)
     }, []);
     return (
         <header className="bg-[#0d1b2aff] text-white p-4 mb-2">
@@ -41,5 +39,4 @@ function Header() {
         </header>
     );
 }
-
 export default Header;

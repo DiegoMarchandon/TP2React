@@ -1,5 +1,3 @@
-import {useNavigate} from 'react-router-dom'
-import { ROUTES } from '../../src/const/routes';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { useEffect, useState } from 'react';
@@ -9,16 +7,8 @@ function Home(){
     // variable que va a almacenar los items en favoritos
     // const itemsFavoritos = {};
     const favItems = JSON.parse(localStorage.getItem("favoritos")) || [];
-    
-    const navigate = useNavigate();
-    const onClickNavigateToFavoritosHandler = () =>{
-        navigate(ROUTES.favoritos)
-    }
-    
     const [apod, setApod] = useState([]);
     useEffect(() => {
-
-
         const fetchApod = async () => {
             try {
                 const response = await fetch(
@@ -31,7 +21,6 @@ function Home(){
                 console.error("Error fetching data:", error);
             }
         };
-    
         fetchApod(); 
     }, []);
 
@@ -50,8 +39,6 @@ function Home(){
                 />
             ))}
             </div>
-            {/* Boludeando con el boton */}
-            {/* <button className=" border cursor-pointer"  onClick={onClickNavigateToFavoritosHandler}> ir a Favoritos</button> */}
             <Footer/>
         </div>
     );
