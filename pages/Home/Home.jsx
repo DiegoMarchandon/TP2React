@@ -15,8 +15,6 @@ function Home(){
     
     const [apod, setApod] = useState([]);
     useEffect(() => {
-
-
         const fetchApod = async () => {
             try {
                 const response = await fetch(
@@ -29,7 +27,6 @@ function Home(){
                 console.error("Error fetching data:", error);
             }
         };
-    
         fetchApod(); 
     }, []);
 
@@ -48,8 +45,6 @@ function Home(){
                 />
             ))}
             </div>
-            {/* Boludeando con el boton */}
-            {/* <button className=" border cursor-pointer"  onClick={onClickNavigateToFavoritosHandler}> ir a Favoritos</button> */}
             <Footer/>
         </div>
     );
