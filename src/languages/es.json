@@ -3,7 +3,8 @@
   "language": "Idioma",
   "home": {
     "title": "Página de inicio",
-    "description": "Esta es la página de inicio de nuestra aplicación."
+    "description": "Esta es la página de inicio de nuestra aplicación.",
+    "detail": "Ver detalles"
   },
   "footer": {
     "legend": "Imágenes y datos proporcionados por la NASA. Desarrollado con React y Tailwind CSS.",

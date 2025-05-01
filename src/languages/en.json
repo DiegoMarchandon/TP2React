@@ -3,7 +3,8 @@
   "language": "Language",
   "home": {
     "title": "Home Page",
-    "description": "This is the home page of our app."
+    "description": "This is the home page of our app.",
+    "detail": "See details"
   },
   "footer": {
     "legend": "Images and data provided by NASA. Powered by React and Tailwind CSS.",
