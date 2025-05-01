@@ -4,13 +4,18 @@
   "home": {
     "title": "Home Page",
     "description": "This is the home page of our app.",
-    "detail": "See details"
+    "detail": "See details",
+    "boton": "Clear date"
+  },
+  "favoritos":{
+    "mensaje":"No additions to favorites"
   },
   "footer": {
     "legend": "Images and data provided by NASA. Powered by React and Tailwind CSS.",
     "apilink": "NASA Open APIs.",
     "gitlink": "View the repository on GitHub",
-    "twitterlink": "Follow us on Twitter"
+    "twitterlink": "Follow us on Twitter",
+    "carrera": "Technician in Web Development Advanced Web Programming"
   },
   "header": {
     "favorites": "Favorites"

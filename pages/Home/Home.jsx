@@ -60,7 +60,7 @@ function Home() {
             <Header key={clave} />
             <div className='flex flex-col items-center justify-center w-full gap-4'>
                 <input type="date" value={filtroApod} onChange={handleChange} className=" bg-white w-40 rounded-sm w-xs size-8 opacity-70" />
-                <button className='w-34 mt-1 mb-4 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 cursor-pointer' onClick={handleReset}>Limpiar fecha</button>
+                <button className='w-34 mt-1 mb-4 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 cursor-pointer' onClick={handleReset}>{t('home.boton')}</button>
             </div>
             <h1>{t('home.description')}</h1>
             <div className="flex-grow flex flex-wrap gap-4 p-4 justify-center">

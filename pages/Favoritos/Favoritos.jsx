@@ -3,9 +3,11 @@ import Footer from '../../components/Footer/Footer';
 import Card from '../../components/Card/Card';
 import { useFavoritos } from '../../src/context/favsContext';
 import { Earth } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 function Favoritos() {
+    const { t } = useTranslation();
 
     const { favoritos } = useFavoritos();
     const [clave, setClave] = useState(0);
@@ -33,12 +35,9 @@ function Favoritos() {
                 ) : (
                     <div className='flex flex-col items-center justify-center h-full'>
                         <Earth size={80} className='opacity-50' />
-                        <h1 className='text-2xl font-bold opacity-50'>No hay agregados a favoritos</h1>
+                        <h1 className='text-2xl font-bold opacity-50'>{t('favoritos.mensaje')}</h1>
                     </div>
                 )}
-                {/* Boludeando con el boton */}
-                {/* <button className=" border cursor-pointer" onClick={onClickNavigateToHomeHandler}>Ir a Home</button> */}
-                {/* {console.log("favoritos: ",favs)}; */}
                 <Footer />
             </div>
         </div>
