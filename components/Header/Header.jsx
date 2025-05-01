@@ -1,6 +1,7 @@
 import {useNavigate} from 'react-router-dom'
 import { ROUTES } from '../../src/const/routes';
 import {useEffect, useState} from 'react'
+import i18next from 'i18next';
 
 function Header() {
     const navigate = useNavigate();
@@ -17,6 +18,12 @@ function Header() {
         setContador(favoritos.length);
         // console.log(favoritos.length)           // PROBAnDOO
     }, []);
+
+    const handleLanguageChange = (event) => {
+        const newLanguage = event.target.value;
+        i18next.changeLanguage(newLanguage);
+        localStorage.setItem("language", newLanguage); // Guarda el idioma seleccionado
+    };
     return (
         <header className="bg-[#0d1b2aff] text-white p-4 mb-2">
             <div className="container mx-auto flex justify-between items-center p-4">
@@ -35,6 +42,16 @@ function Header() {
                     </li>
                     <li className="cursor-pointer hover:text-gray-300" onClick={onClickNavigateToHomeHandler}>Home</li>
                 </ul>
+                {/* Selector de idioma */}
+                <select 
+                    className="bg-blue-600 text-white p-2 rounded-md cursor-pointer"
+                    onChange={handleLanguageChange}
+                    defaultValue={localStorage.getItem("language") || "en"}
+                >
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                </select>
+
             </div>
         </header>
     );

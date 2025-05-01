@@ -1,0 +1,8 @@
+{
+    "welcome": "Welcome to our application!",
+    "language": "Language",
+    "home": {
+      "title": "Home Page",
+      "description": "This is the home page of our app."
+    }
+  }

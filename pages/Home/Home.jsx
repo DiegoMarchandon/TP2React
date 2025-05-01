@@ -4,9 +4,10 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { useEffect, useState } from 'react';
 import Card from '../../components/Card/Card';
+import { useTranslation } from 'react-i18next';
 
 function Home(){
-    // variable que va a almacenar los items en favoritos
+    const { t } = useTranslation();
     
     const navigate = useNavigate();
     const onClickNavigateToFavoritosHandler = () =>{
@@ -34,6 +35,7 @@ function Home(){
     return (
         <div className="min-h-screen flex flex-col bg-radial-[at_50%_75%] from-sky-200 via-blue-300 to-indigo-900 to-90%">
             <Header />
+            <h1>{t('home.description')}</h1>
             <div className="flex-grow flex flex-wrap gap-4 p-4 justify-center">
             {apod.map((item) => (
                 <Card

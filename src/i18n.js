@@ -1,21 +1,15 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
+import en from '../src/languages/en.json';
+import es from '../src/languages/es.json';
 
 // Traducciones
 const resources = {
   en: {
-    translation: {
-      welcome: "Welcome to our application!",
-      language: "Language",
-    },
-  },
+    translation: en },
   es: {
-    translation: {
-      welcome: "¡Bienvenido a nuestra aplicación!",
-      language: "Idioma",
-    },
-  },
+    translation: es }
 };
 
 i18n
@@ -25,6 +19,7 @@ i18n
     resources,
     fallbackLng: 'en', // Idioma por defecto
     lng: localStorage.getItem('language') || 'en', // Recupera el idioma desde localStorage
+    // lng: localStorage.getItem('language') || navigator.language.split('-')[0] || 'en', // Detecta idioma del navegador
     interpolation: {
       escapeValue: false, // React ya se encarga de escapar valores
     },
