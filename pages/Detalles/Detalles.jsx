@@ -2,14 +2,24 @@ import { useNavigate } from 'react-router-dom'
 import { ROUTES } from '../../src/const/routes';
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
+// import { HeartPlus, SquareChevronRight } from 'lucide-react';
 import { HeartPlus, SquareChevronRight } from 'lucide-react';
+import { useFavoritos } from '../../src/context/favsContext';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 
 function Detalles() {
+
     const { date } = useParams(); // Extrae la fecha de la URL
     const favItems = JSON.parse(localStorage.getItem("favoritos")) || [];
+    const { favoritos, toggleFavorito } = useFavoritos();
+    const [clave, setClave] = useState(0);
+
+    const refrescarHijo = () => {
+        setClave(clave + 1);
+    };
+    const estaEnFavoritos = favoritos.some(dato => dato.date === date);
 
     function handleCardClick() {
         favItems[Object.keys(favItems).length] = detail;
@@ -43,16 +53,13 @@ function Detalles() {
 
     return (
         <div className='min-h-screen flex flex-col bg-radial-[at_50%_75%] from-sky-200 via-blue-300 to-indigo-900 to-90%'>
-            <Header />
+            <Header key={clave} />
             <div className="container mx-auto px-4 py-8">
                 <div className="flex flex-col items-center gap-6">
                     <div className="relative w-[90%] max-w-4xl sm:w-3/4">
-                        <button
-                            onClick={handleCardClick}
-                            className="cursor-pointer absolute top-2 right-2 text-blue-500 hover:text-red-500 transition-colors duration-300 z-10"
-                        >
-                            <HeartPlus size={35} strokeWidth={2} />
-                        </button>
+                        <button onClick={() => toggleFavorito(detail, refrescarHijo)} className={`cursor-pointer absolute top-2 right-2 ${estaEnFavoritos ? 'text-green-500' :
+                            'text-blue-500'} hover:text-red-500 transition-colors duration-300`}>
+                            <HeartPlus size={35} strokeWidth={2} /></button>
                         <img
                             src={detail.hdurl}
                             alt={detail.title}

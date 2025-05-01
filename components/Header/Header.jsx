@@ -1,14 +1,17 @@
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { ROUTES } from '../../src/const/routes';
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 import i18next from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 function Header() {
+    const { t } = useTranslation();
+
     const navigate = useNavigate();
-    const onClickNavigateToFavoritoHandler = () =>{
+    const onClickNavigateToFavoritoHandler = () => {
         navigate(ROUTES.favoritos)
     }
-    const onClickNavigateToHomeHandler = () =>{
+    const onClickNavigateToHomeHandler = () => {
         navigate(ROUTES.home)
     }
 
@@ -27,23 +30,23 @@ function Header() {
     return (
         <header className="bg-[#0d1b2aff] text-white p-4 mb-2">
             <div className="container mx-auto flex justify-between items-center p-4">
-                <img className="w-30 cursor-pointer transition duration-300 hover:brightness-125 hover:contrast-150 hover:drop-shadow-lg" src="/logo/logo.png" alt="Logo" onClick={onClickNavigateToHomeHandler}/>
+                <img className="w-30 cursor-pointer transition duration-300 hover:brightness-125 hover:contrast-150 hover:drop-shadow-lg" src="/logo/logo.png" alt="Logo" onClick={onClickNavigateToHomeHandler} />
                 <ul className="flex space-x-6 text-xl" >
                     <li className="cursor-pointer hover:text-gray-300" onClick={onClickNavigateToFavoritoHandler}>
-                        Favoritos
+                        {t('header.favorites')}
                         <span className="p-2 ">
                             {contador > 0 && (
-                            <span className="animate-ping absolute h-9 w-7 rounded-full bg-blue-400 opacity-75"></span>
-                        )}
-                        <span className="relative inline-flex bg-blue-600 text-white rounded-full px-2 py-1 text-lg">
-                            {contador}
+                                <span className="animate-ping absolute h-9 w-7 rounded-full bg-blue-400 opacity-75"></span>
+                            )}
+                            <span className="relative inline-flex bg-blue-600 text-white rounded-full px-2 py-1 text-lg">
+                                {contador}
+                            </span>
                         </span>
-                    </span>
                     </li>
                     <li className="cursor-pointer hover:text-gray-300" onClick={onClickNavigateToHomeHandler}>Home</li>
                 </ul>
                 {/* Selector de idioma */}
-                <select 
+                <select
                     className="bg-blue-600 text-white p-2 rounded-md cursor-pointer"
                     onChange={handleLanguageChange}
                     defaultValue={localStorage.getItem("language") || "en"}

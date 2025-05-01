@@ -1,6 +1,9 @@
 import { Rocket, Twitter, Github } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 function Footer() {
+    const { t } = useTranslation();
+
     return (
 
         <footer className="bg-gray-900 text-gray-300 py-8  w-full ">
@@ -16,20 +19,20 @@ function Footer() {
                             <a href="https://twitter.com/NASA" target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2 text-sm hover:text-white transition-colors"
-                                title="Seguinos en Twitter"
+                                title={t('footer.twitterlink')}
                             > <Twitter size={20} className="text-gray-300 hover:text-white" />
                             </a>
                             <a href="https://github.com/DiegoMarchandon/TP-React2" target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2 text-sm hover:text-white transition-colors"
-                                title="Ver el repositorio en GitHub"
+                                title={t('footer.gitlink')}
                             > <Github size={20} className="text-gray-300 hover:text-white" />
                             </a>
                         </div>
                         <div className="flex items-center gap-2">
                             <a href="https://api.nasa.gov/" target="_blank" rel="noopener noreferrer"
                                 className="text-sm hover:text-white transition-colors"
-                            > APIs abiertas de la NASA
+                            > {t('footer.apilink')}
                             </a> <Rocket size={20} className="text-gray-300" />
                         </div>
                     </div>
@@ -38,7 +41,7 @@ function Footer() {
                 <hr className="my-6 border-gray-700" />
                 <div className="text-center">
                     <p className="text-xs text-gray-500">
-                        Imágenes y datos proporcionados por la NASA. Desarrollado con React y Tailwind CSS.
+                        {t('footer.legend')}
                     </p>
                 </div>
             </div>

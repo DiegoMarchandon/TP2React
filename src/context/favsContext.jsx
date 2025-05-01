@@ -20,13 +20,14 @@ export const FavoritosProvider = ({ children }) => {
   }, [favoritos]);
 
   // Función para modificar favoritos ( handCardClick)
-  const toggleFavorito = (item) => {
+  const toggleFavorito = (item, refrescar) => {
     const index = favoritos.findIndex(f => f.date === item.date);
     if (index !== -1) {
       setFavoritos(prev => prev.filter((_, i) => i !== index));
     } else {
       setFavoritos(prev => [...prev, { ...item }]); // Clonamos para evitar referencias compartidas
     }
+    refrescar();
   };
 
   return (

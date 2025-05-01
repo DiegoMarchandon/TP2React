@@ -1,8 +1,17 @@
 {
-    "welcome": "¡Bienvenido a nuestra aplicación!",
-    "language": "Idioma",
-    "home": {
-      "title": "Página de inicio",
-      "description": "Esta es la página de inicio de nuestra aplicación."
-    }
+  "welcome": "¡Bienvenido a nuestra aplicación!",
+  "language": "Idioma",
+  "home": {
+    "title": "Página de inicio",
+    "description": "Esta es la página de inicio de nuestra aplicación."
+  },
+  "footer": {
+    "legend": "Imágenes y datos proporcionados por la NASA. Desarrollado con React y Tailwind CSS.",
+    "apilink": "APIs abiertas de la NASA.",
+    "gitlink": "Ver el repositorio en GitHub",
+    "twitterlink": "Seguinos en Twitter"
+  },
+  "header": {
+    "favorites": "Favoritos"
   }
+}

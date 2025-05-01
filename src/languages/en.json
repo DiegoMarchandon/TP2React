@@ -1,8 +1,17 @@
 {
-    "welcome": "Welcome to our application!",
-    "language": "Language",
-    "home": {
-      "title": "Home Page",
-      "description": "This is the home page of our app."
-    }
+  "welcome": "Welcome to our application!",
+  "language": "Language",
+  "home": {
+    "title": "Home Page",
+    "description": "This is the home page of our app."
+  },
+  "footer": {
+    "legend": "Images and data provided by NASA. Powered by React and Tailwind CSS.",
+    "apilink": "NASA Open APIs.",
+    "gitlink": "View the repository on GitHub",
+    "twitterlink": "Follow us on Twitter"
+  },
+  "header": {
+    "favorites": "Favorites"
   }
+}
