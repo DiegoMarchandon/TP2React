@@ -19,7 +19,6 @@ function Header() {
     useEffect(() => {
         const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
         setContador(favoritos.length);
-        // console.log(favoritos.length)           // PROBAnDOO
     }, []);
 
     const handleLanguageChange = (event) => {
