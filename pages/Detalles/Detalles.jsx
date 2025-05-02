@@ -8,6 +8,8 @@ import { useFavoritos } from '../../src/context/favsContext';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import Pdf from '../../components/PDF/PDF';
+import {PDFDownloadLink} from '@react-pdf/renderer'
 
 function Detalles() {
 
@@ -48,7 +50,9 @@ function Detalles() {
         getDetail();
     }, [date]);
     if (detail === undefined) {
-        return <h1>Loading....</h1>;
+        return <div className='flex justify-center align-item-center text-center'>
+                    <h1 className='py-24 font-bold text-4xl text-blue-700'>Loading....</h1>
+                </div>;
     }
 
     return (
@@ -77,6 +81,19 @@ function Detalles() {
                         ))}
                     </div>
                 </div>
+            </div>
+            <div  className='flex flex-col items-center justify-center w-full gap-4'>
+                <PDFDownloadLink document={<Pdf apod={detail}/>} fileName={`${detail.title}.pdf`}>
+                    {
+                        ({loading})=> loading ? 
+                        <button>
+                            Loading Document ... 
+                        </button> : 
+                        <button className='w-40 mt-1 mb-4 bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 cursor-pointer'>
+                            Descargar PDF
+                        </button>
+                    }
+                </PDFDownloadLink>
             </div>
             <Footer />
         </div>
