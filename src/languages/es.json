@@ -1,16 +1,22 @@
 {
-  "welcome": "¡Bienvenido a nuestra aplicación!",
+  "welcome": "Bienvenido a nuestra aplicación",
   "language": "Idioma",
   "home": {
     "title": "Página de inicio",
     "description": "Esta es la página de inicio de nuestra aplicación.",
-    "detail": "Ver detalles"
+    "instruction": "Por favor, Introduzca una fecha desde el 16/06/1995 en adelante.",
+    "detail": "Ver detalles",
+    "boton": "Limpiar fecha"
+  },
+  "favoritos":{
+    "mensaje":"No hay agregados a favoritos"
   },
   "footer": {
     "legend": "Imágenes y datos proporcionados por la NASA. Desarrollado con React y Tailwind CSS.",
     "apilink": "APIs abiertas de la NASA.",
     "gitlink": "Ver el repositorio en GitHub",
-    "twitterlink": "Seguinos en Twitter"
+    "twitterlink": "Seguinos en Twitter",
+    "carrera": " Tecnicatura en desarrolo web Programación web avanzada"
   },
   "header": {
     "favorites": "Favoritos"

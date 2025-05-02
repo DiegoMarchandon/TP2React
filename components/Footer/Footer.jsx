@@ -5,13 +5,12 @@ function Footer() {
     const { t } = useTranslation();
 
     return (
-
         <footer className="bg-gray-900 text-gray-300 py-8  w-full ">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
                     <div className="text-center md:text-left">
-                        <p className="text-sm">
-                            Tecnicatura en desarrolo web<br></br> Programación web avanzada <br></br> 2025
+                        <p className="text-sm w-50">
+                        {t('footer.carrera')} 2025
                         </p>
                     </div>
                     <div className="flex flex-col items-center gap-4">

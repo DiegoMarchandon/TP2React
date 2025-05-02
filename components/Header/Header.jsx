@@ -19,7 +19,6 @@ function Header() {
     useEffect(() => {
         const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
         setContador(favoritos.length);
-        // console.log(favoritos.length)           // PROBAnDOO
     }, []);
 
     const handleLanguageChange = (event) => {
@@ -31,10 +30,10 @@ function Header() {
         <header className="bg-[#0d1b2aff] text-white p-4 mb-2">
             <div className="container mx-auto flex justify-between items-center p-4">
                 <img className="w-30 cursor-pointer transition duration-300 hover:brightness-125 hover:contrast-150 hover:drop-shadow-lg" src="/logo/logo.png" alt="Logo" onClick={onClickNavigateToHomeHandler} />
-                <ul className="flex space-x-6 text-xl" >
+                <ul className="flex justify-center items-center space-x-6 text-xl w-full" >
                     <li className="cursor-pointer hover:text-gray-300" onClick={onClickNavigateToFavoritoHandler}>
                         {t('header.favorites')}
-                        <span className="p-2 ">
+                        <span className="p-2 relative">
                             {contador > 0 && (
                                 <span className="animate-ping absolute h-9 w-7 rounded-full bg-blue-400 opacity-75"></span>
                             )}
