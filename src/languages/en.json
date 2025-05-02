@@ -4,6 +4,7 @@
   "home": {
     "title": "Home Page",
     "description": "This is the home page of our app.",
+    "instruction":"Please enter a date from 16/06/1995 onwards.",
     "detail": "See details",
     "boton": "Clear date"
   },

@@ -1,9 +1,10 @@
 {
-  "welcome": "¡Bienvenido a nuestra aplicación!",
+  "welcome": "Bienvenido a nuestra aplicación",
   "language": "Idioma",
   "home": {
     "title": "Página de inicio",
     "description": "Esta es la página de inicio de nuestra aplicación.",
+    "instruction": "Por favor, Introduzca una fecha desde el 16/06/1995 en adelante.",
     "detail": "Ver detalles",
     "boton": "Limpiar fecha"
   },
