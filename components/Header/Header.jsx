@@ -32,6 +32,11 @@ function Header() {
                 <img className="w-24 sm:w-30 cursor-pointer transition duration-300 hover:brightness-125 hover:contrast-150 hover:drop-shadow-lg"
                     src="/logo/logo.png" alt="Logo" onClick={onClickNavigateToHomeHandler} />
                 <ul className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 text-lg sm:text-xl w-full sm:w-auto">
+                    <li
+                        className="cursor-pointer hover:text-gray-300"
+                        onClick={onClickNavigateToHomeHandler}>
+                        Home
+                    </li>
                     <li className="cursor-pointer hover:text-gray-300 flex items-center space-x-2"
                         onClick={onClickNavigateToFavoritoHandler} >
                         <span>{t('header.favorites')}</span>
@@ -43,11 +48,6 @@ function Header() {
                                 {contador}
                             </span>
                         </span>
-                    </li>
-                    <li
-                        className="cursor-pointer hover:text-gray-300"
-                        onClick={onClickNavigateToHomeHandler}>
-                        Home
                     </li>
                 </ul>
                 {/* Selector de idioma */}

@@ -17,11 +17,10 @@ function Favoritos() {
     };
 
     return (
-        <div className='bg-radial-[at_50%_75%] from-sky-200 via-blue-300 to-indigo-900 to-90%'>
+        <div className="bg-radial-[at_50%_75%] from-sky-200 via-blue-300 to-indigo-900 to-90% min-h-screen flex flex-col">
             <Header key={clave} />
-            <div className='flex-grow flex flex-wrap gap-4 p-4 justify-center'>
+            <div className="flex-grow flex flex-wrap gap-4 p-4 justify-center">
                 {favoritos.length > 0 ? (
-
                     favoritos.map((item) => (
                         <Card
                             key={item.date}
@@ -33,13 +32,13 @@ function Favoritos() {
                         />
                     ))
                 ) : (
-                    <div className='flex flex-col items-center justify-center h-full'>
-                        <Earth size={80} className='opacity-50' />
-                        <h1 className='text-2xl font-bold opacity-50'>{t('favoritos.mensaje')}</h1>
+                    <div className="flex flex-col items-center justify-center flex-grow w-full">
+                        <Earth size={80} className="opacity-50" />
+                        <h1 className="text-2xl font-bold opacity-50">{t('favoritos.mensaje')}</h1>
                     </div>
                 )}
-                <Footer />
             </div>
+            <Footer />
         </div>
     );
 }
