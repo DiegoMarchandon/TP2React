@@ -21,7 +21,7 @@ function Footer() {
                                 title={t('footer.twitterlink')}
                             > <Twitter size={20} className="text-gray-300 hover:text-white" />
                             </a>
-                            <a href="https://github.com/DiegoMarchandon/TP-React2" target="_blank"
+                            <a href="https://github.com/DiegoMarchandon/TP2React.git" target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2 text-sm hover:text-white transition-colors"
                                 title={t('footer.gitlink')}

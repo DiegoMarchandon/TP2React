@@ -7,14 +7,14 @@
 
 ## Instrucciones:
 El sistema puede ser corrido directamente desde la aplicación Vercel a través del siguiente link:
- - **Agregar**
+ - https://tp-2-react-9z42.vercel.app/
 
 Para ejecutarlo de manera local, es necesario clonar el proyecto e instalar las siguientes dependencias:
 <h3>Instalación paso por paso</h3>
 <ol>
     <li>
         Para instalar la aplicación nos posicionamos con una terminal en la carpeta donde queremos descargarla y ejecutamos el siguiente comando:
-        git clone https://github.com/DiegoMarchandon/TP-React2.git
+        git clone https://github.com/DiegoMarchandon/TP2React.git
         <img src="./public/Guia/img1.png" alt="Imagen de como se clona">
     </li>
     <li>

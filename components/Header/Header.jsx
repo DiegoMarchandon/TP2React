@@ -28,32 +28,34 @@ function Header() {
     };
     return (
         <header className="bg-[#0d1b2aff] text-white p-4 mb-2">
-            <div className="container mx-auto flex justify-between items-center p-4">
-                <img className="w-30 cursor-pointer transition duration-300 hover:brightness-125 hover:contrast-150 hover:drop-shadow-lg" src="/logo/logo.png" alt="Logo" onClick={onClickNavigateToHomeHandler} />
-                <ul className="flex justify-center items-center space-x-6 text-xl w-full" >
-                    <li className="cursor-pointer hover:text-gray-300" onClick={onClickNavigateToFavoritoHandler}>
-                        {t('header.favorites')}
+            <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center p-4 space-y-4 sm:space-y-0">
+                <img className="w-24 sm:w-30 cursor-pointer transition duration-300 hover:brightness-125 hover:contrast-150 hover:drop-shadow-lg"
+                    src="/logo/logo.png" alt="Logo" onClick={onClickNavigateToHomeHandler} />
+                <ul className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 text-lg sm:text-xl w-full sm:w-auto">
+                    <li className="cursor-pointer hover:text-gray-300 flex items-center space-x-2"
+                        onClick={onClickNavigateToFavoritoHandler} >
+                        <span>{t('header.favorites')}</span>
                         <span className="p-2 relative">
                             {contador > 0 && (
                                 <span className="animate-ping absolute h-9 w-7 rounded-full bg-blue-400 opacity-75"></span>
                             )}
-                            <span className="relative inline-flex bg-blue-600 text-white rounded-full px-2 py-1 text-lg">
+                            <span className="relative inline-flex bg-blue-600 text-white rounded-full px-2 py-1 text-sm sm:text-lg">
                                 {contador}
                             </span>
                         </span>
                     </li>
-                    <li className="cursor-pointer hover:text-gray-300" onClick={onClickNavigateToHomeHandler}>Home</li>
+                    <li
+                        className="cursor-pointer hover:text-gray-300"
+                        onClick={onClickNavigateToHomeHandler}>
+                        Home
+                    </li>
                 </ul>
                 {/* Selector de idioma */}
-                <select
-                    className="bg-blue-600 text-white p-2 rounded-md cursor-pointer"
-                    onChange={handleLanguageChange}
-                    defaultValue={localStorage.getItem("language") || "en"}
-                >
+                <select className="bg-blue-600 text-white p-2 rounded-md cursor-pointer w-32 sm:w-auto"
+                    onChange={handleLanguageChange} defaultValue={localStorage.getItem("language") || "en"}>
                     <option value="en">English</option>
                     <option value="es">Español</option>
                 </select>
-
             </div>
         </header>
     );
