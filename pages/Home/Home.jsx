@@ -94,7 +94,7 @@ function Home() {
                 <input type="date" value={filtroApod} onChange={handleChange} className=" bg-white w-40 rounded-sm w-xs size-8 opacity-70" />
                 <button className='w-34 mt-1 mb-4 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 cursor-pointer opacity-70' onClick={handleReset}>{t('home.boton')}</button>
                 <div className='flex flex-col items-center'>
-                    <p className='text-xl mb-8 text-center drop-shadow-md'>{t('home.instruction2')}</p>
+                    <h6 className='text-md mb-8 text-center font-semibold text-gray-400 drop-shadow-md'>{t('home.instruction2')}</h6>
                     <select name="selectAntiguedad" id="selectAntiguedad" onClick={handleOrder} className='bg-white rounded-xl w-28 opacity-70'>
                         <option value=""></option>
                         <option value="masNueva">mas nueva</option>
