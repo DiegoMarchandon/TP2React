@@ -26,8 +26,7 @@ function App() {
           <Route path={ROUTES.home} element={<Home/>} />
           <Route path={ROUTES.favoritos} element={<Favoritos/>} />
           <Route path={ROUTES.detalles} element={<Detalles/>} />
-          <Route path={ROUTES.notfound} element={<NotFound/>} />
-          {/* <Route path="/contact" element={<h1>Contact</h1>} /> */}
+          <Route path='*' element={<NotFound/>} />
         </Routes>
       </div>
       </FavoritosProvider>
