@@ -56,7 +56,10 @@ function Detalles() {
     }
 
     return (
-        <div className='min-h-screen flex flex-col bg-radial-[at_50%_75%] from-sky-200 via-blue-300 to-indigo-900 to-90%'>
+        <div className='relative min-h-screen overflow-hidden flex flex-col'>
+            <video autoPlay muted loop className="fixed top-0 left-0 w-full h-full object-cover -z-10">
+                <source src="../../public/logo/espacio2.mp4" type="video/mp4" />
+            </video>
             <Header key={clave} />
             <div className="container mx-auto px-4 py-8">
                 <div className="flex flex-col items-center gap-6">
@@ -70,10 +73,10 @@ function Detalles() {
                             className="w-full object-cover rounded-lg shadow-lg"
                         />
                     </div>
-                    <h1 className="text-3xl font-bold text-gray-800 text-center sm:text-4xl">
+                    <h1 className="text-3xl font-bold text-gray-500 text-center sm:text-4xl">
                         {detail.title}
                     </h1>
-                    <div className="text-gray-600 text-lg leading-relaxed max-w-3xl text-center">
+                    <div className="text-gray-500 text-lg leading-relaxed max-w-3xl text-center">
                         {detail.explanation.split('\n').map((paragraph, index) => (
                             <p key={index} className="mb-4">
                                 {paragraph}

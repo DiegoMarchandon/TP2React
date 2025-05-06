@@ -82,14 +82,17 @@ function Home() {
     const apodOrdenado = ordenarApod(apod);
 
     return (
-        <div className="min-h-screen flex flex-col bg-radial-[at_50%_75%] from-sky-200 via-blue-300 to-indigo-900 to-90%">
+        <div className=" relative min-h-screen overflow-hidden">
+            <video autoPlay muted loop className="fixed top-0 left-0 w-full h-full object-cover -z-10">
+                <source src="../../public/logo/espacio2.mp4" type="video/mp4" />
+            </video>
             <Header key={clave} />
-            <h1 className="text-5xl font-extrabold text-blue-100 mb-4 drop-shadow-lg text-center">{t('welcome')}</h1>
-            <h3 className="text-xl mb-8 text-center drop-shadow-md">{t('home.instruction')}</h3>
+            <h1 className="text-5xl font-extrabold text-blue-100 mb-4 drop-shadow-lg text-center  opacity-60">{t('welcome')}</h1>
+            <h3 className="text-xl mb-8 text-center text-white font-bold drop-shadow-md  opacity-70">{t('home.instruction')}</h3>
             <div className='flex flex-col items-center justify-center w-full gap-4'>
                 {errorMessage && <p className="text-red-500 font-semibold">{errorMessage}</p>}
                 <input type="date" value={filtroApod} onChange={handleChange} className=" bg-white w-40 rounded-sm w-xs size-8 opacity-70" />
-                <button className='w-34 mt-1 mb-4 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 cursor-pointer' onClick={handleReset}>{t('home.boton')}</button>
+                <button className='w-34 mt-1 mb-4 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 cursor-pointer opacity-70' onClick={handleReset}>{t('home.boton')}</button>
                 <div className='flex flex-col items-center'>
                     <p className='text-xl mb-8 text-center drop-shadow-md'>{t('home.instruction2')}</p>
                     <select name="selectAntiguedad" id="selectAntiguedad" onClick={handleOrder} className='bg-white rounded-xl w-28 opacity-70'>
