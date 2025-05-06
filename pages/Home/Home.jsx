@@ -81,6 +81,13 @@ function Home() {
     // Aplica el orden a los elementos cuando cambia el estado `apod` o `orden`
     const apodOrdenado = ordenarApod(apod);
 
+    window.addEventListener('scroll', function() {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            console.log('El usuario ha llegado al final de la página');
+        }
+    });
+    
+
     return (
         <div className=" relative min-h-screen overflow-hidden">
             <video autoPlay muted loop className="fixed top-0 left-0 w-full h-full object-cover -z-10">
@@ -116,6 +123,8 @@ function Home() {
                     />
                 ))}
             </div>
+            {/* <p className='text-white'>final de pagina</p> */}
+            <button className='block mx-auto gap-2 mt-4 w-md bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:-translate-y-1' onClick={fetchApod}>Traer otras 12 imágenes aleatorias</button>
             <Footer />
         </div>
     );

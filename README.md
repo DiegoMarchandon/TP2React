@@ -5,6 +5,11 @@
 - **Diego Marchandon** FAI-4886
 - **Ignacio Araya** FAI-836
 
+
+## ⚠️ Aclaraciones previas:
+- la API NASA APOD no soporta paginación como otras APIs (no existe el parámetro `page=2`, `page=3`, etc.). En su lugar, nosotros pedimos 12 imagenes aleatorias a través del parámetro `count=12` y, cuando el usuario llega al final, "simulamos" la paginación dándole la posibilidad de traer otras 12 imágenes aleatorias. 
+
+
 ## Instrucciones:
 El sistema puede ser corrido directamente desde la aplicación Vercel a través del siguiente link:
  - https://tp-2-react-9z42.vercel.app/
@@ -51,6 +56,3 @@ en github, clonarlo y luego crear el proyecto.
 4) Desarrollar la aplicación siguiendo los requerimientos.
 5) Analizar y crear los componentes que sean necesarios para cumplir los objetivos.
 6) Documentar decisión importante de diseño o código en el readme.md.
-
-
-
