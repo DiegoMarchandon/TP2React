@@ -4,7 +4,8 @@
   "home": {
     "title": "Home Page",
     "description": "This is the home page of our app.",
-    "instruction":"Please enter a date from 16/06/1995 onwards.",
+    "instruction":"To search for a specific date, enter a date from 16/06/1995 onwards.",
+    "instruction2":"Or if you want to sort the current random items by date, choose the order.",
     "detail": "See details",
     "boton": "Clear date"
   },

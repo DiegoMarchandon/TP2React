@@ -9,7 +9,7 @@ import { useFavoritos } from '../../src/context/favsContext';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Pdf from '../../components/PDF/PDF';
-import {PDFDownloadLink} from '@react-pdf/renderer'
+import {PDFDownloadLink} from '@react-pdf/renderer';
 
 function Detalles() {
 
