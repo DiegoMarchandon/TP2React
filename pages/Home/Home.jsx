@@ -91,7 +91,7 @@ function Home() {
     return (
         <div className=" relative min-h-screen overflow-hidden">
             <video autoPlay muted loop className="fixed top-0 left-0 w-full h-full object-cover -z-10">
-                <source src="../../public/logo/espacio2.mp4" type="video/mp4" />
+                <source src="/logo/espacio2.mp4" type="video/mp4" />
             </video>
             <Header key={clave} />
             <h1 className="text-5xl font-extrabold text-blue-100 mb-4 drop-shadow-lg text-center  opacity-60">{t('welcome')}</h1>
