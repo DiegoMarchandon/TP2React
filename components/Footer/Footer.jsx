@@ -25,7 +25,7 @@ function Footer() {
                                 <Twitter size={20} className="text-gray-300 hover:text-white" />
                             </a>
                             <a
-                                href="https://github.com/DiegoMarchandon/TP-React2"
+                                href="https://github.com/DiegoMarchandon/TP2React"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2 text-sm hover:text-white transition-colors"
