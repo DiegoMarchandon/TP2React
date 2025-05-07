@@ -58,7 +58,7 @@ function Detalles() {
     return (
         <div className='relative min-h-screen overflow-hidden flex flex-col'>
             <video autoPlay muted loop className="fixed top-0 left-0 w-full h-full object-cover -z-10">
-                <source src="../../public/logo/espacio2.mp4" type="video/mp4" />
+                <source src="/logo/espacio2.mp4" type="video/mp4" />
             </video>
             <Header key={clave} />
             <div className="container mx-auto px-4 py-8">
