@@ -94,20 +94,57 @@ function Home() {
                 <source src="/logo/espacio2.mp4" type="video/mp4" />
             </video>
             <Header key={clave} />
-            <h1 className="text-5xl font-extrabold text-blue-100 mb-4 drop-shadow-lg text-center  opacity-60">{t('welcome')}</h1>
-            <h3 className="text-xl mb-8 text-center text-white font-bold drop-shadow-md  opacity-70">{t('home.instruction')}</h3>
-            <div className='flex flex-col items-center justify-center w-full gap-4'>
-                {errorMessage && <p className="text-red-500 font-semibold">{errorMessage}</p>}
-                <input type="date" value={filtroApod} onChange={handleChange} className=" bg-white w-40 rounded-sm w-xs size-8 opacity-70" />
-                <button className='w-34 mt-1 mb-4 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 cursor-pointer opacity-70' onClick={handleReset}>{t('home.boton')}</button>
-                <div className='flex flex-col items-center'>
-                    <h6 className='text-md mb-8 text-center font-semibold text-gray-400 drop-shadow-md'>{t('home.instruction2')}</h6>
-                    <select name="selectAntiguedad" id="selectAntiguedad" onClick={handleOrder} className='bg-white rounded-xl w-28 opacity-70'>
-                        <option value=""></option>
-                        <option value="masNueva">mas nueva</option>
-                        <option value="masVieja">mas antigua</option>
-                    </select>
+            <div className="relative w-full h-[113vh] overflow-visible">
+                <img src="../../public/logo/agujeroNegro.png" alt="Agujero Negro" className="w-full h-full object-cover opacity-80"
+                    style={{
+                        WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)',
+                        maskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)',
+                    }}
+                />
+                
+               {/*texto encima, alineado a un costado */}
+                <div className="absolute top-0/4 left-5 max-w-lg text-white">
+                    <h2 className="text-4xl md:text-6xl font-extrabold drop-shadow-lg mb-4">
+                        APOD
+                    </h2>
+                    <p className="text-lg md:text-2xl font-semibold drop-shadow-md">
+                        {t('home.informacion')}
+                    </p>
                 </div>
+            </div>
+            <div className="flex flex-col items-center justify-center w-full gap-6 py-10">
+            <div className="text-center space-y-4">
+                <h3 className="text-2xl text-white font-semibold drop-shadow-md opacity-80">
+                    {t('home.instruction')}
+                </h3>
+            </div>
+
+            {/*input de fecha + boton */}
+            <div className="flex flex-col sm:flex-row items-center gap-4 mt-8">
+                <input type="date" value={filtroApod} onChange={handleChange} className="bg-white w-40 rounded-md px-4 py-2 shadow-md opacity-80 focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+                <button onClick={handleReset} className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-md transition transform hover:-translate-y-1 shadow-md opacity-90">
+                    {t('home.boton')}
+                </button>
+            </div>
+
+            {/*mensaje de error si existe */}
+            {errorMessage && (
+                <p className="text-red-400 font-semibold mt-2">
+                    {errorMessage}
+                </p>
+            )}
+
+            {/*select para orden */}
+            <div className="flex flex-col items-center gap-3 mt-6">
+                <h6 className="text-md text-gray-300 font-semibold drop-shadow-md">
+                {t('home.instruction2')}
+                </h6>
+                <select name="selectAntiguedad" id="selectAntiguedad" onClick={handleOrder} className="bg-white rounded-xl px-4 py-2 w-36 shadow-md opacity-80 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <option value=""></option>
+                    <option value="masNueva">Más nueva</option>
+                    <option value="masVieja">Más antigua</option>
+                </select>
+            </div>
             </div>
             <div className="flex-grow flex flex-wrap gap-4 p-4 justify-center">
                 {
@@ -124,7 +161,7 @@ function Home() {
                 ))}
             </div>
             {/* <p className='text-white'>final de pagina</p> */}
-            <button className='block mx-auto gap-2 mt-4 w-md bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:-translate-y-1' onClick={fetchApod}>Traer otras 12 imágenes aleatorias</button>
+            <button className='block mx-auto gap-2 mt-4 mb-5 w-md bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:-translate-y-1' onClick={fetchApod}>{t('home.botonTraer')}</button>
             <Footer />
         </div>
     );

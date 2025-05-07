@@ -3,11 +3,13 @@
   "language": "Language",
   "home": {
     "title": "Home Page",
+    "informacion": "One of NASA's most popular websites is the Astronomy Picture of the Day.In fact, this website is one of the most popular across all federal agencies.",
     "description": "This is the home page of our app.",
     "instruction":"To search for a specific date, enter a date from 16/06/1995 onwards.",
     "instruction2":"Or if you want to sort the current random items by date, choose the order.",
     "detail": "See details",
-    "boton": "Clear date"
+    "boton": "Clear date",
+    "botonTraer": "Bring another 12 random images"
   },
   "favoritos":{
     "mensaje":"No additions to favorites"

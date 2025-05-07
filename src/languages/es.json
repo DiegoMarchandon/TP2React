@@ -3,11 +3,13 @@
   "language": "Idioma",
   "home": {
     "title": "Página de inicio",
+    "informacion": "Uno de los sitios web más populares de la NASA es Astronomy Picture of the Day (la Imagen Astronómica del Día).De hecho, este sitio web es uno de los más populares en todas las agencias federales.",
     "description": "Esta es la página de inicio de nuestra aplicación.",
     "instruction": "Para buscar una fecha específica, introduzca una fecha desde el 16/06/1995 en adelante.",
     "instruction2":"O si desea ordenar los elementos aleatorios actuales por fecha, elija el orden.",
     "detail": "Ver detalles",
-    "boton": "Limpiar fecha"
+    "boton": "Limpiar fecha",
+    "botonTraer": "Traer otras 12 imágenes aleatorias"
   },
   "favoritos":{
     "mensaje":"No hay agregados a favoritos"
