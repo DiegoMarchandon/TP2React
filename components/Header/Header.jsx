@@ -3,6 +3,7 @@ import { ROUTES } from '../../src/const/routes';
 import { useEffect, useState } from 'react'
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
+import { useFavoritos } from '../../src/context/favsContext';
 
 function Header() {
     const { t } = useTranslation();
@@ -15,11 +16,8 @@ function Header() {
         navigate(ROUTES.home)
     }
 
-    const [contador, setContador] = useState(0);
-    useEffect(() => {
-        const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
-        setContador(favoritos.length);
-    }, []);
+    const { favoritos } = useFavoritos();
+    
 
     const handleLanguageChange = (event) => {
         const newLanguage = event.target.value;
@@ -41,11 +39,11 @@ function Header() {
                         onClick={onClickNavigateToFavoritoHandler} >
                         <span>{t('header.favorites')}</span>
                         <span className="p-2 relative">
-                            {contador > 0 && (
+                            {favoritos.length > 0 && (
                                 <span className="animate-ping absolute h-9 w-7 rounded-full bg-blue-400 opacity-75"></span>
                             )}
                             <span className="relative inline-flex bg-blue-600 text-white rounded-full px-2 py-1 text-sm sm:text-lg">
-                                {contador}
+                                {favoritos.length}
                             </span>
                         </span>
                     </li>
