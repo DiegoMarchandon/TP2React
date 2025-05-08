@@ -25,7 +25,7 @@ function Header() {
         localStorage.setItem("language", newLanguage); // Guarda el idioma seleccionado
     };
     return (
-        <header className="bg-[#0d1b2aff] text-white p-4 mb-2">
+        <header className="bg-[#0d1b2aff] text-white p-4 ">
             <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center p-4 space-y-4 sm:space-y-0">
                 <img className="w-24 sm:w-30 cursor-pointer transition duration-300 hover:brightness-125 hover:contrast-150 hover:drop-shadow-lg"
                     src="/logo/logo.png" alt="Logo" onClick={onClickNavigateToHomeHandler} />
