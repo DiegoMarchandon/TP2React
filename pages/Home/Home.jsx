@@ -95,7 +95,7 @@ function Home() {
             </video>
             <Header key={clave} />
             <div className="relative w-full h-[113vh] overflow-visible">
-                <img src="../../public/logo/agujeroNegro.png" alt="Agujero Negro" className="w-full h-full object-cover opacity-80"
+                <img src="/logo/agujeroNegro.png" alt="Agujero Negro" className="w-full h-full object-cover opacity-80"
                     style={{
                         WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)',
                         maskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)',
